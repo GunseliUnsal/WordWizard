@@ -12,17 +12,23 @@ struct ContentView: View {
     @State private var usedLetters = [Letter]()
     @State private var dictionary = Set<String>()
     
+    @Namespace private var animation
     
     var body: some View {
         VStack {
             HStack{
                 ForEach(usedLetters) {letter in
-                    LetterView(letter: letter, color: wordIsValid() ? .green : .red, onTap: remove)}
+                    LetterView(letter: letter, color: wordIsValid() ? .green : .red, onTap: remove)
+                        .matchedGeometryEffect(id: letter, in: animation)
+                }
+                
             }
             
             HStack{
                 ForEach(unusedLetters) {letter in
-                    LetterView(letter: letter, color: .yellow, onTap: add)}
+                    LetterView(letter: letter, color: .yellow, onTap: add)
+                        .matchedGeometryEffect(id: letter, in: animation)
+                }
             }
         }
         .padding()
@@ -39,14 +45,20 @@ struct ContentView: View {
     
     func add(_ letter: Letter) {
         guard let index = unusedLetters.firstIndex(of: letter) else { return }
-        unusedLetters.remove(at: index)
-        usedLetters.append(letter)
+        
+        withAnimation(.spring){
+            unusedLetters.remove(at: index)
+            usedLetters.append(letter)
+        }
     }
 
     func remove(_ letter: Letter) {
         guard let index = usedLetters.firstIndex(of: letter) else { return }
-        usedLetters.remove(at: index)
-        unusedLetters.append(letter)
+        
+        withAnimation(.spring){
+            usedLetters.remove(at: index)
+            unusedLetters.append(letter)
+        }
     }
     
     func wordIsValid() -> Bool {
