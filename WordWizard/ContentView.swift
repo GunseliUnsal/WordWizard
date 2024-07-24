@@ -28,6 +28,18 @@ struct ContentView: View {
         guard let contents = try? String(contentsOf: url) else { return }
         dictionary = Set(contents.components(separatedBy: .newlines))
     }
+    
+    func add(_ letter: Letter) {
+        guard let index = unusedLetters.firstIndex(of: letter) else { return }
+        unusedLetters.remove(at: index)
+        usedLetters.append(letter)
+    }
+
+    func remove(_ letter: Letter) {
+        guard let index = usedLetters.firstIndex(of: letter) else { return }
+        usedLetters.remove(at: index)
+        unusedLetters.append(letter)
+    }
 }
 
 #Preview {
