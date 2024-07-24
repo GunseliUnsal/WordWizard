@@ -15,12 +15,20 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, view!")
+            HStack{
+                ForEach(usedLetters) {letter in
+                    LetterView(letter: letter, color: wordIsValid() ? .green : .red, onTap: remove)}
+            }
+            
+            HStack{
+                ForEach(unusedLetters) {letter in
+                    LetterView(letter: letter, color: .yellow, onTap: add)}
+            }
         }
         .padding()
+        .onAppear(perform: {
+            load()
+        })
     }
     
     func load() {
@@ -39,6 +47,11 @@ struct ContentView: View {
         guard let index = usedLetters.firstIndex(of: letter) else { return }
         usedLetters.remove(at: index)
         unusedLetters.append(letter)
+    }
+    
+    func wordIsValid() -> Bool {
+        let word = usedLetters.map(\.character).joined().lowercased()
+        return dictionary.contains(word)
     }
 }
 
