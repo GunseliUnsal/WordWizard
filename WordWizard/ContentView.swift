@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var unusedLetters = (0..<9).map {_ in Letter()}
+    @State private var usedLetters = [Letter]()
+    @State private var dictionary = Set<String>()
+    
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Hello, view!")
         }
         .padding()
+    }
+    
+    func load() {
+        guard let url = Bundle.main.url(forResource: "dictionary", withExtension: "txt") else { return }
+        guard let contents = try? String(contentsOf: url) else { return }
+        dictionary = Set(contents.components(separatedBy: .newlines))
     }
 }
 
