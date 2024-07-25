@@ -1,4 +1,4 @@
-﻿aba
+aba
 abadi
 abajur
 abaküs
@@ -23992,3 +23992,4 @@ zürafagiller
 zürra
 zürriyet
 züyuf
+getir

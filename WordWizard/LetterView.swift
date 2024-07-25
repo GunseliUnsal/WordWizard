@@ -35,5 +35,5 @@ struct LetterView: View {
 }
 
 #Preview {
-    LetterView(letter: Letter(), color: .green) {_ in}
+    LetterView(letter: Letter(language: .english), color: .green) {_ in}
 }

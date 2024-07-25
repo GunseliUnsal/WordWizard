@@ -12,6 +12,7 @@
 		870820B22C513651005FF315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870820B12C513651005FF315 /* Assets.xcassets */; };
 		870820B52C513651005FF315 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870820B42C513651005FF315 /* Preview Assets.xcassets */; };
 		878852252C524C8100CE4E01 /* AnimatingNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878852242C524C8100CE4E01 /* AnimatingNumberView.swift */; };
+		878852272C5253FD00CE4E01 /* turkceKelimeler.txt in Resources */ = {isa = PBXBuildFile; fileRef = 878852262C5253FD00CE4E01 /* turkceKelimeler.txt */; };
 		87DB8A372C51662C00DDF449 /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 87DB8A362C51662C00DDF449 /* dictionary.txt */; };
 		87DB8A392C5166C000DDF449 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DB8A382C5166C000DDF449 /* Letter.swift */; };
 		87DB8A3B2C5167A100DDF449 /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DB8A3A2C5167A100DDF449 /* LetterView.swift */; };
@@ -24,6 +25,7 @@
 		870820B12C513651005FF315 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		870820B42C513651005FF315 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		878852242C524C8100CE4E01 /* AnimatingNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingNumberView.swift; sourceTree = "<group>"; };
+		878852262C5253FD00CE4E01 /* turkceKelimeler.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = turkceKelimeler.txt; sourceTree = "<group>"; };
 		87DB8A362C51662C00DDF449 /* dictionary.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
 		87DB8A382C5166C000DDF449 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		87DB8A3A2C5167A100DDF449 /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				87DB8A382C5166C000DDF449 /* Letter.swift */,
 				87DB8A3A2C5167A100DDF449 /* LetterView.swift */,
 				87DB8A362C51662C00DDF449 /* dictionary.txt */,
+				878852262C5253FD00CE4E01 /* turkceKelimeler.txt */,
 				870820B12C513651005FF315 /* Assets.xcassets */,
 				870820B32C513651005FF315 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87DB8A372C51662C00DDF449 /* dictionary.txt in Resources */,
+				878852272C5253FD00CE4E01 /* turkceKelimeler.txt in Resources */,
 				870820B52C513651005FF315 /* Preview Assets.xcassets in Resources */,
 				870820B22C513651005FF315 /* Assets.xcassets in Resources */,
 			);
