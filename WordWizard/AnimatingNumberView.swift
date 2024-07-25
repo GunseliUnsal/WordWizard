@@ -7,12 +7,20 @@
 
 import SwiftUI
 
-struct AnimatingNumberView: View {
+struct AnimatingNumberView: View, Animatable {
+    var title: String
+    var value: Int
+
+    var animatableData: Double {
+        get { Double(value) }
+        set { value = Int(newValue) }
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(title): \(value)")
     }
 }
 
 #Preview {
-    AnimatingNumberView()
+    AnimatingNumberView(title: "Score", value: 0)
 }

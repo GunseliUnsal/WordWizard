@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var dictionary = Set<String>()
     
     @Namespace private var animation
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
     
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var time = 0
@@ -37,8 +38,10 @@ struct ContentView: View {
                 }
             }
             HStack {
-                Spacer()
-                Text("Time: \(time)")
+                if dynamicTypeSize < .accessibility1 {
+                    Spacer()
+                }
+                AnimatingNumberView(title: "Time", value: time)
                 Spacer()
 
                 Button("Go", action: submit)
@@ -48,8 +51,10 @@ struct ContentView: View {
                     
 
                 Spacer()
-                Text("Score: \(score)")
-                Spacer()
+                AnimatingNumberView(title: "Score", value: score)
+                if dynamicTypeSize < .accessibility1 {
+                    Spacer()
+                }
             }
             .padding(.vertical, 5)
             .monospacedDigit()
@@ -67,7 +72,13 @@ struct ContentView: View {
             } else {
                 time -= 1
             }
+            
         })
+        .alert("Game over!", isPresented: $isGameOver) {
+            Button("Play Again", action: newGame)
+        } message: {
+            Text("Your score was: \(score)")
+        }
     }
     
     func load() {

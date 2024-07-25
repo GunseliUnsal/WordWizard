@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LetterView: View {
+    @ScaledMetric(relativeTo: .largeTitle) var size = 60
+    
     let letter: Letter
     var color: Color
     var onTap: (Letter) -> Void
@@ -19,8 +21,8 @@ struct LetterView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(color.gradient)
-                    .frame(height: 60)
-                    .frame(minWidth: 30, maxWidth: 60)
+                    .frame(height: size)
+                    .frame(minWidth: size / 2, maxWidth: size)
                     .shadow(radius: 3)
 
                 Text(letter.character)
@@ -28,6 +30,7 @@ struct LetterView: View {
                     .font(.largeTitle.bold())
             }
         }
+        .accessibilityLabel(letter.character.lowercased())
     }
 }
 
