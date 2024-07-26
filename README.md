@@ -8,5 +8,5 @@ WordWizard is a word game application that can be played in both Turkish and Eng
 - **Scoring System:** Earn points for correctly formed words.
 - **Dynamic Interface:** Adapts to screen sizes for a responsive design.
 
-## 🐠 App Screenshots
+## App Screenshots
 <img src="appPhoto.png" alt="App photo"  style="width: 900px;">
